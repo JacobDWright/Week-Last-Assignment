@@ -1,20 +1,26 @@
+#Jacob Wright
+
+
+
+
 import math
 import time
 def subsetI(n,k):
     return math.factorial(n) / (math.factorial(k)* math.factorial(n-k))
 
 def subsetR(n,k):
-    if ????		#base case 1
-        return ??
-    if ?????	#base case 2
-        return ??
+    if n == k:		#base case 1
+        return 1
+    if k == 0:	#base case 2
+        return 1
     else:
-        return ????????  #recursion
+        return subsetR(n-1, k-1) + subsetR(n-1, k)  #recursion
 
 
 def main():
     n = 20
     k = 5
+    looptime = 1000
 
     timeB = time.time()
     for x in range(1000):
@@ -29,6 +35,9 @@ def main():
     timeA = time.time()
     print("R = ",R)
     print("elapsed time: ", timeA-timeB)
+    
+if __name__ == "__main__":
+    main()
  
 
     
